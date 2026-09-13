@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import LoginScreen from './login/LoginScreen'
+import Desktop from './desktop/Desktop'
 import './index.css'
 
 function GatedDesktop() {
@@ -12,11 +13,7 @@ function GatedDesktop() {
     return <LoginScreen onSuccess={() => setLoggedIn(true)} />
   }
 
-  return (
-    <div className="boot-placeholder">
-      <h1>Desktop shell — coming in Milestone 3</h1>
-    </div>
-  )
+  return <Desktop />
 }
 
 function ResumePlaceholder() {

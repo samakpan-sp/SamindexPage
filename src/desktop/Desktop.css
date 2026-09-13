@@ -1,0 +1,152 @@
+.desktop {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(160deg, #2c2c44 0%, #1a1a2b 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top bar */
+.top-bar {
+  height: 32px;
+  background: rgba(20, 20, 32, 0.85);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  font-size: 0.8rem;
+  color: #ddd;
+}
+
+/* Icon grid */
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 90px);
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.icon-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+
+.icon-cell:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.icon-cell-icon {
+  width: 48px;
+  height: 48px;
+  background: #7c5cff;
+  border-radius: 10px;
+}
+
+.icon-cell.flagship .icon-cell-icon {
+  background: #ffb454;
+  box-shadow: 0 0 12px rgba(255, 180, 84, 0.5);
+}
+
+.icon-cell-label {
+  font-size: 0.75rem;
+  color: #eee;
+  text-align: center;
+}
+
+/* Dock */
+.dock {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.75rem;
+  background: rgba(20, 20, 32, 0.85);
+  backdrop-filter: blur(6px);
+  padding: 0.5rem 0.75rem;
+  border-radius: 16px;
+}
+
+.dock-item-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #444a6a;
+}
+
+/* 3D folder canvas overlay */
+.folder-canvas {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+/* Label rendered beneath each 3D folder mesh */
+.folder-3d-label {
+  font-size: 0.75rem;
+  color: #eee;
+  text-align: center;
+  white-space: nowrap;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Desktop hint prompt */
+.desktop-hint {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  color: #ffb454;
+  background: rgba(20, 20, 32, 0.6);
+  border: 1px solid rgba(157, 157, 255, 0.3);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  opacity: 1;
+  transition: opacity 0.6s ease;
+  z-index: 5;
+  pointer-events: none;
+  animation: blink-cursor 1.4s steps(1) infinite;
+}
+
+.desktop-hint-hidden {
+  opacity: 0;
+}
+
+@keyframes blink-cursor {
+  0%, 49% { border-color: rgba(157, 157, 255, 0.3); }
+  50%, 100% { border-color: rgba(157, 157, 255, 0.08); }
+}
+
+/* Responsive: mobile gets a tighter grid, dock stays but shrinks */
+@media (max-width: 600px) {
+  .icon-grid {
+    grid-template-columns: repeat(auto-fill, 70px);
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .icon-cell-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .dock-item-icon {
+    width: 34px;
+    height: 34px;
+  }
+}
