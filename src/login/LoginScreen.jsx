@@ -32,7 +32,7 @@ function LoginScreen({ onSuccess }) {
           <div className="login-avatar login-avatar-fallback">SA</div>
         ) : (
           <img
-            src="/avatar.png"
+            src="/avatar.jpg"
             alt="Samindex"
             className="login-avatar"
             onError={() => setAvatarError(true)}

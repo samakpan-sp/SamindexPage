@@ -7,11 +7,18 @@ function IconGrid({ onOpenFolder }) {
   const webGLSupported = useWebGLSupport()
   const show3D = isDesktop && webGLSupported
 
-  const handleClick = (icon) => {
+  const activate = (icon) => {
     if (icon.externalUrl) {
       window.open(icon.externalUrl, '_blank', 'noopener,noreferrer')
     } else {
       onOpenFolder?.(icon.id)
+    }
+  }
+
+  const handleKeyDown = (e, icon) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault()
+      activate(icon)
     }
   }
 
@@ -24,7 +31,11 @@ function IconGrid({ onOpenFolder }) {
           <div
             key={icon.id}
             className={`icon-cell ${icon.flagship ? 'flagship' : ''}`}
-            onClick={() => handleClick(icon)}
+            onClick={() => activate(icon)}
+            onKeyDown={(e) => handleKeyDown(e, icon)}
+            role="button"
+            tabIndex={0}
+            aria-label={`Open ${icon.label}`}
           >
             <div className="icon-cell-icon">
               <span className="icon-cell-glyph">{icon.icon}</span>
