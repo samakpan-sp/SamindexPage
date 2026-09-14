@@ -175,3 +175,24 @@
     text-align: center;
   }
 }
+
+.icon-cell-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-cell-glyph {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.top-bar-role {
+  opacity: 0.75;
+}
+
+@media (max-width: 600px) {
+  .top-bar-role {
+    display: none;
+  }
+}

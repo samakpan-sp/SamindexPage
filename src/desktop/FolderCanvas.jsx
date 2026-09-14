@@ -3,6 +3,7 @@ import FolderMesh from './FolderMesh'
 import { icons } from './icons'
 
 const folderIcons = icons.filter((icon) => icon.is3D)
+const SPACING = 1.9 // widened from 1.3 to stop labels overlapping
 
 function FolderCanvas({ onOpenFolder }) {
   return (
@@ -17,7 +18,7 @@ function FolderCanvas({ onOpenFolder }) {
       {folderIcons.map((icon, i) => (
         <FolderMesh
           key={icon.id}
-          position={[i * 1.3 - (folderIcons.length - 1) * 0.65, 1.2, 0]}
+          position={[i * SPACING - (folderIcons.length - 1) * (SPACING / 2), 1.2, 0]}
           color={icon.flagship ? '#ffb454' : '#7c5cff'}
           flagship={icon.flagship}
           label={icon.label}

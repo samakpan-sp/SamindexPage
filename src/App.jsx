@@ -1,7 +1,9 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import LoginScreen from './login/LoginScreen'
 import Desktop from './desktop/Desktop'
+import ContactWindow from './windows/ContactWindow'
+import { cv } from './terminal/terminalContent'
 import './index.css'
 
 function GatedDesktop() {
@@ -16,20 +18,35 @@ function GatedDesktop() {
   return <Desktop />
 }
 
-function ResumePlaceholder() {
-  return <div className="boot-placeholder"><h1>Résumé — placeholder</h1></div>
+function ResumePage() {
+  useEffect(() => {
+    window.location.href = cv.downloadUrl
+  }, [])
+
+  return (
+    <div className="boot-placeholder">
+      <h1>Redirecting to CV download…</h1>
+      <a href={cv.downloadUrl} className="resume-fallback-link">
+        Click here if the download doesn't start automatically
+      </a>
+    </div>
+  )
 }
 
-function ContactPlaceholder() {
-  return <div className="boot-placeholder"><h1>Contact — placeholder</h1></div>
+function ContactPage() {
+  return (
+    <div className="standalone-page">
+      <ContactWindow />
+    </div>
+  )
 }
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/resume" element={<ResumePlaceholder />} />
-        <Route path="/contact" element={<ContactPlaceholder />} />
+        <Route path="/resume" element={<ResumePage />} />
+        <Route path="/contact" element={<ContactPage />} />
         <Route path="*" element={<GatedDesktop />} />
       </Routes>
     </BrowserRouter>

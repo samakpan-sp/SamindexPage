@@ -26,7 +26,9 @@ function IconGrid({ onOpenFolder }) {
             className={`icon-cell ${icon.flagship ? 'flagship' : ''}`}
             onClick={() => handleClick(icon)}
           >
-            <div className="icon-cell-icon" />
+            <div className="icon-cell-icon">
+              <span className="icon-cell-glyph">{icon.icon}</span>
+            </div>
             <span className="icon-cell-label">{icon.label}</span>
           </div>
         )

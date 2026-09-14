@@ -6,7 +6,9 @@ function TopBar() {
     <div className="top-bar">
       <span className="top-bar-activities">Activities</span>
       <span className="top-bar-clock">{time}</span>
-      <span className="top-bar-user">samindex</span>
+      <span className="top-bar-user">
+        Samuel Akpan<span className="top-bar-role"> · Full-Stack Software Engineer</span>
+      </span>
     </div>
   )
 }

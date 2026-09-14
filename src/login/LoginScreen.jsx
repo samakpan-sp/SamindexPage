@@ -8,6 +8,7 @@ function LoginScreen({ onSuccess }) {
   const [input, setInput] = useState('')
   const [attempts, setAttempts] = useState(0)
   const [shake, setShake] = useState(false)
+  const [avatarError, setAvatarError] = useState(false)
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -27,8 +28,19 @@ function LoginScreen({ onSuccess }) {
   return (
     <div className="login-screen">
       <div className="login-card">
-        <img src="/avatar.png" alt="Avatar" className="login-avatar" />
+        {avatarError ? (
+          <div className="login-avatar login-avatar-fallback">SA</div>
+        ) : (
+          <img
+            src="/avatar.png"
+            alt="Samindex"
+            className="login-avatar"
+            onError={() => setAvatarError(true)}
+          />
+        )}
+
         <p className="login-username">{USERNAME}</p>
+        <p className="login-tagline">Full-Stack Developer &amp; AI Engineer — Interactive Portfolio</p>
 
         <p className="login-instruction">
           Enter code: <span className="login-code-display">{ENTRY_CODE}</span>
@@ -49,6 +61,10 @@ function LoginScreen({ onSuccess }) {
         {attempts >= 2 && (
           <p className="login-hint">Hint: it's the number right above ↑</p>
         )}
+
+        <p className="login-reassurance">
+          Not real security — just part of the experience. Type the code above to begin.
+        </p>
       </div>
     </div>
   )

@@ -22,3 +22,16 @@ body {
   justify-content: center;
   gap: 0.5rem;
 }
+
+.resume-fallback-link {
+  margin-top: 0.75rem;
+  color: #ffb454;
+}
+
+.standalone-page {
+  max-width: 480px;
+  margin: 3rem auto;
+  padding: 1.5rem;
+  background: #23233a;
+  border-radius: 10px;
+}
