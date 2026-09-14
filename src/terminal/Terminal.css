@@ -1,0 +1,72 @@
+.terminal {
+  background: #0d0d14;
+  color: #9dffb0;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  height: 420px;
+  max-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.terminal-body {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 0.5rem;
+}
+
+.terminal-line {
+  margin-bottom: 0.35rem;
+  word-break: break-word;
+}
+
+.terminal-line pre {
+  margin: 0;
+  font-family: inherit;
+  white-space: pre-wrap;
+  color: #d0d0d0;
+}
+
+.terminal-line-command {
+  color: #eee;
+}
+
+.terminal-prompt {
+  color: #7c5cff;
+  margin-right: 0.4rem;
+}
+
+.terminal-input-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #9dffb0;
+  font-family: inherit;
+  font-size: 0.85rem;
+}
+
+.terminal-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.25rem;
+}
+
+.terminal-contact a {
+  color: #7c5cff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.terminal-contact a:hover {
+  text-decoration: underline;
+}

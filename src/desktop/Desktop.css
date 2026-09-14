@@ -132,12 +132,13 @@
   50%, 100% { border-color: rgba(157, 157, 255, 0.08); }
 }
 
-/* Responsive: mobile gets a tighter grid, dock stays but shrinks */
+/* Responsive: mobile gets a tighter grid, no 3D canvas, repositioned hint */
 @media (max-width: 600px) {
   .icon-grid {
     grid-template-columns: repeat(auto-fill, 70px);
     gap: 1rem;
-    padding: 1.5rem 1rem;
+    padding: 4.5rem 1rem 5.5rem; /* extra top/bottom room for hint + dock */
+    justify-content: center;
   }
 
   .icon-cell-icon {
@@ -145,8 +146,32 @@
     height: 40px;
   }
 
+  .icon-cell.flagship .icon-cell-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .icon-cell-label {
+    font-size: 0.7rem;
+  }
+
+  .dock {
+    bottom: 8px;
+    gap: 0.5rem;
+    padding: 0.4rem 0.6rem;
+  }
+
   .dock-item-icon {
     width: 34px;
     height: 34px;
+  }
+
+  .desktop-hint {
+    top: 40px;
+    font-size: 0.7rem;
+    padding: 0.3rem 0.75rem;
+    max-width: 85%;
+    white-space: normal;
+    text-align: center;
   }
 }

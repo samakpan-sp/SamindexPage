@@ -1,0 +1,91 @@
+.project-file {
+  position: relative;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.project-file-stamp {
+  position: absolute;
+  top: -0.5rem;
+  right: 0;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: #ffb454;
+  border: 1px solid rgba(255, 180, 84, 0.5);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  transform: rotate(3deg);
+}
+
+.project-file-title {
+  font-size: 1.6rem;
+  margin-bottom: 0.15rem;
+}
+
+.project-file-subtitle {
+  color: #aaa;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.project-file-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.project-file-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #7c5cff;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+
+.project-file-cta:hover {
+  background: #6a4ce0;
+}
+
+.project-file-cta-secondary {
+  background: transparent;
+  border: 1px solid #7c5cff;
+  color: #b5a3ff;
+}
+
+.project-file-cta-secondary:hover {
+  background: rgba(124, 92, 255, 0.15);
+}
+
+.project-file-section {
+  margin-bottom: 1.25rem;
+}
+
+.project-file-section h3 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #ffb454;
+  margin-bottom: 0.5rem;
+}
+
+.project-file-section ul {
+  padding-left: 1.1rem;
+  color: #ddd;
+}
+
+.project-file-section li {
+  margin-bottom: 0.3rem;
+}
+
+.project-file-stack {
+  color: #ccc;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+}

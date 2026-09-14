@@ -1,0 +1,74 @@
+.window-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 16, 0.55);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  animation: fade-in 0.15s ease;
+}
+
+.window-shell {
+  width: min(720px, 92vw);
+  max-height: 85vh;
+  background: #23233a;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: pop-in 0.18s ease;
+}
+
+.window-shell-accent {
+  border: 1px solid rgba(255, 180, 84, 0.4);
+}
+
+.window-titlebar {
+  height: 40px;
+  background: rgba(20, 20, 32, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.75rem;
+  flex-shrink: 0;
+}
+
+.window-title {
+  font-size: 0.85rem;
+  color: #eee;
+  font-weight: 500;
+}
+
+.window-close {
+  background: #e06c75;
+  border: none;
+  color: white;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0.7rem;
+  line-height: 1;
+}
+
+.window-close:hover {
+  background: #c85963;
+}
+
+.window-content {
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pop-in {
+  from { transform: scale(0.92); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
