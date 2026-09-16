@@ -2,6 +2,8 @@ import { icons } from './icons'
 import { useIsDesktop } from '../hooks/useIsDesktop'
 import { useWebGLSupport } from '../hooks/useWebGLSupport'
 
+
+// Updated
 function IconGrid({ onOpenFolder }) {
   const isDesktop = useIsDesktop()
   const webGLSupported = useWebGLSupport()

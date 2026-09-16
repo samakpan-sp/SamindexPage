@@ -4,7 +4,7 @@ import Dock from './Dock'
 import IconGrid from './IconGrid'
 import FolderCanvas from './FolderCanvas'
 import DesktopHint from './DesktopHint'
-import ScrollCue from './ScrollCue'
+import ScrollCue from './ScrollCue' //scroll hints
 import WindowManager from '../windows/WindowManager'
 import { useIsDesktop } from '../hooks/useIsDesktop'
 import { useWebGLSupport } from '../hooks/useWebGLSupport'
