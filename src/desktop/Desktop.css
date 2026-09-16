@@ -125,7 +125,6 @@
   user-select: none;
 }
 
-/* Desktop hint prompt (permanent) */
 .desktop-hint {
   position: absolute;
   top: 40px;

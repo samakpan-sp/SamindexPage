@@ -21,9 +21,10 @@ Have a problem? Let's build the solution.`
 export const contact = {
   email: 'samakpan817@gmail.com',
   github: 'https://github.com/samakpan-sp',
-  whatsapp: '+2349056442333',
+  whatsapp: '+2348114937399',
 }
 
+//For CV download
 export const cv = {
   downloadUrl: 'https://drive.google.com/uc?export=download&id=19lJe5vP7TLgge-zRqIbkHlR4D2gXewm4',
   viewUrl: 'https://drive.google.com/file/d/19lJe5vP7TLgge-zRqIbkHlR4D2gXewm4/view?usp=sharing',

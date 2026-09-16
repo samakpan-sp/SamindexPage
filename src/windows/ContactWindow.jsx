@@ -8,7 +8,7 @@ function ContactWindow() {
   return (
     <div className="content-window">
       <h2 className="content-window-title">Contact</h2>
-      <p className="content-window-subtitle">Have a problem? Let's build the solution.</p>
+      <p className="content-window-subtitle">Have a problem? Let's build the solution together.</p>
 
       <a className="cv-download-button" href={cv.downloadUrl} target="_blank" rel="noopener noreferrer">
         <ExternalLinkIcon />
