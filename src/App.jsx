@@ -40,6 +40,7 @@ function ContactPage() {
     </div>
   )
 }
+// Main App component with routing
 
 function App() {
   return (
