@@ -3,7 +3,9 @@
   width: 100%;
   background: linear-gradient(160deg, #2c2c44 0%, #1a1a2b 100%);
   position: relative;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  --canvas-clear: 260px; 
 }
 
 /* Top bar */
@@ -19,12 +21,20 @@
   color: #ddd;
 }
 
+.top-bar-role {
+  opacity: 0.75;
+}
+
 /* Icon grid */
 .icon-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, 90px);
   gap: 1.5rem;
   padding: 2rem;
+}
+
+.icon-grid-offset {
+  padding-top: var(--canvas-clear);
 }
 
 .icon-cell {
@@ -42,16 +52,30 @@
   background: rgba(255, 255, 255, 0.08);
 }
 
+.icon-cell:focus-visible {
+  outline: 2px solid #7c5cff;
+  outline-offset: 2px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
 .icon-cell-icon {
   width: 48px;
   height: 48px;
   background: #7c5cff;
   border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .icon-cell.flagship .icon-cell-icon {
   background: #ffb454;
   box-shadow: 0 0 12px rgba(255, 180, 84, 0.5);
+}
+
+.icon-cell-glyph {
+  font-size: 1.4rem;
+  line-height: 1;
 }
 
 .icon-cell-label {
@@ -81,18 +105,16 @@
   background: #444a6a;
 }
 
-/* 3D folder canvas overlay */
 .folder-canvas {
   position: absolute;
   top: 40px;
   left: 0;
   width: 100%;
-  height: 300px;
+  height: calc(var(--canvas-clear) - 40px);
   pointer-events: auto;
   z-index: 2;
 }
 
-/* Label rendered beneath each 3D folder mesh */
 .folder-3d-label {
   font-size: 0.75rem;
   color: #eee;
@@ -103,7 +125,7 @@
   user-select: none;
 }
 
-/* Desktop hint prompt */
+/* Desktop hint prompt (permanent) */
 .desktop-hint {
   position: absolute;
   top: 40px;
@@ -116,15 +138,9 @@
   border: 1px solid rgba(157, 157, 255, 0.3);
   padding: 0.4rem 1rem;
   border-radius: 20px;
-  opacity: 1;
-  transition: opacity 0.6s ease;
   z-index: 5;
   pointer-events: none;
   animation: blink-cursor 1.4s steps(1) infinite;
-}
-
-.desktop-hint-hidden {
-  opacity: 0;
 }
 
 @keyframes blink-cursor {
@@ -132,12 +148,57 @@
   50%, 100% { border-color: rgba(157, 157, 255, 0.08); }
 }
 
-/* Responsive: mobile gets a tighter grid, no 3D canvas, repositioned hint */
+.scroll-cue-fade {
+  position: absolute;
+  top: calc(var(--canvas-clear) - 55px);
+  left: 0;
+  width: 100%;
+  height: 55px;
+  background: linear-gradient(to bottom, transparent, rgba(26, 26, 43, 0.9));
+  z-index: 1;
+  pointer-events: none;
+}
+
+.scroll-cue {
+  position: absolute;
+  top: calc(var(--canvas-clear) + 100px); 
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  pointer-events: none;
+}
+
+.scroll-cue-arrow {
+  font-size: 1.1rem;
+  color: #ffb454;
+  animation: bounce-down 1.4s ease-in-out infinite;
+}
+
+.scroll-cue-label {
+  font-family: 'Courier New', monospace;
+  font-size: 0.65rem;
+  color: #9d9dff;
+  letter-spacing: 0.05em;
+}
+
+@keyframes bounce-down {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
 @media (max-width: 600px) {
+  .top-bar-role {
+    display: none;
+  }
+
   .icon-grid {
     grid-template-columns: repeat(auto-fill, 70px);
     gap: 1rem;
-    padding: 4.5rem 1rem 5.5rem; /* extra top/bottom room for hint + dock */
+    padding: 4.5rem 1rem 5.5rem; 
     justify-content: center;
   }
 
@@ -175,30 +236,3 @@
     text-align: center;
   }
 }
-
-.icon-cell-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.icon-cell-glyph {
-  font-size: 1.4rem;
-  line-height: 1;
-}
-.icon-cell:focus-visible {
-  outline: 2px solid #7c5cff;
-  outline-offset: 2px;
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.top-bar-role {
-  opacity: 0.75;
-}
-
-@media (max-width: 600px) {
-  .top-bar-role {
-    display: none;
-  }
-}
-

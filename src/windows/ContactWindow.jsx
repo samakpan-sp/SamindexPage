@@ -31,7 +31,7 @@ function ContactWindow() {
           rel="noopener noreferrer"
           className="contact-link"
         >
-          <span>WhatsApp</span>
+          <span>Chat me on WhatsApp</span>
         </a>
       </div>
     </div>

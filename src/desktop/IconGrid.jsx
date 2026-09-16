@@ -23,7 +23,7 @@ function IconGrid({ onOpenFolder }) {
   }
 
   return (
-    <div className="icon-grid">
+    <div className={`icon-grid ${show3D ? 'icon-grid-offset' : ''}`}>
       {icons.map((icon) => {
         if (show3D && icon.is3D) return null
 
@@ -49,3 +49,4 @@ function IconGrid({ onOpenFolder }) {
 }
 
 export default IconGrid
+

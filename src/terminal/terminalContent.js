@@ -6,7 +6,7 @@ export const skillCategories = {
 }
 
 export const aboutMeText = `Samuel Akpan (Samindex)
-AI Engineer & STEM Educator — Lagos, Nigeria
+Software, AI Engineer & STEM Educator — Lagos, Nigeria
 
 I build full-stack software and AI-powered solutions that solve real
 business and user problems. I help organizations and clients build
@@ -25,6 +25,6 @@ export const contact = {
 }
 
 export const cv = {
-  downloadUrl: 'https://drive.google.com/uc?export=download&id=1eQUbx_vkkaJ9CdugcCBgIc24WvStWwdW',
-  viewUrl: 'https://drive.google.com/file/d/1eQUbx_vkkaJ9CdugcCBgIc24WvStWwdW/view?usp=sharing',
+  downloadUrl: 'https://drive.google.com/uc?export=download&id=19lJe5vP7TLgge-zRqIbkHlR4D2gXewm4',
+  viewUrl: 'https://drive.google.com/file/d/19lJe5vP7TLgge-zRqIbkHlR4D2gXewm4/view?usp=sharing',
 }

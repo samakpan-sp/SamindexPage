@@ -4,6 +4,7 @@ import Dock from './Dock'
 import IconGrid from './IconGrid'
 import FolderCanvas from './FolderCanvas'
 import DesktopHint from './DesktopHint'
+import ScrollCue from './ScrollCue'
 import WindowManager from '../windows/WindowManager'
 import { useIsDesktop } from '../hooks/useIsDesktop'
 import { useWebGLSupport } from '../hooks/useWebGLSupport'
@@ -19,7 +20,12 @@ function Desktop() {
     <div className="desktop">
       <TopBar />
       <DesktopHint />
-      {show3D && <FolderCanvas onOpenFolder={setOpenWindowId} />}
+      {show3D && (
+        <>
+          <FolderCanvas onOpenFolder={setOpenWindowId} />
+          <ScrollCue />
+        </>
+      )}
       <IconGrid onOpenFolder={setOpenWindowId} />
       <Dock />
       <WindowManager
