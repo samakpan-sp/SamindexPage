@@ -40,7 +40,7 @@ function LoginScreen({ onSuccess }) {
         )}
 
         <p className="login-username">{USERNAME}</p>
-        <p className="login-tagline">Full-Stack Developer &amp; AI Engineer — Interactive Portfolio</p>
+        <p className="login-tagline">Full-Stack Developer &amp; AI Integrated Apps — Interactive Portfolio</p>
 
         <p className="login-instruction">
           Enter code: <span className="login-code-display">{ENTRY_CODE}</span>

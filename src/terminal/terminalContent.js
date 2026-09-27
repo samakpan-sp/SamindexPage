@@ -5,8 +5,7 @@ export const skillCategories = {
   'Cloud & DevOps': ['Google Cloud', 'Railway', 'Render', 'Vercel', 'Git'],
 }
 
-export const aboutMeText = `Samuel Akpan (Samindex)
-Software, AI Engineer & STEM Educator — Lagos, Nigeria
+export const aboutMeText = `Samuel Akpan (Samindex) Full-Stack Software Developer | AI Integrated Applications 
 
 I build full-stack software and AI-powered solutions that solve real
 business and user problems. I help organizations and clients build

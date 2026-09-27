@@ -6,8 +6,8 @@ export const projects = {
     subtitle: 'AI-Assisted Digital Trust Investigation Platform',
     accent: true,
     ctas: [
-      { type: 'live', label: 'View Live', href: 'https://tracy-3vhi890.public.builtwithrocket.new' },
-      { type: 'repo', label: 'View Repo', href: 'https://github.com/samakpan-sp/TRACY' },
+      { type: 'live', label: 'View Live', href: 'https://tracy-2pgz.onrender.com' },
+      { type: 'repo', label: 'View Repo', href: 'https://github.com/samakpan-sp/Tracy.git' },
     ],
     sections: [
       {
